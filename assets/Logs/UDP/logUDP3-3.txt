@@ -1,0 +1,47 @@
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_UDP/prog2.pdf recebido com sucesso.
+
+---------------------------------------------------
+Diferença detectada entre os arquivos de origem e destino.
+Tempo da transferência:      0.06756 segundos
+Tamanho original do arquivo: 2553903 bytes
+Total de bytes recebidos:    2465839 bytes
+Pacotes necessários:         2495
+Total de pacotes recebidos:  2409
+---------------------------------------------------
+
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_UDP/prog2.pdf recebido com sucesso.
+
+---------------------------------------------------
+Diferença detectada entre os arquivos de origem e destino.
+Tempo da transferência:      0.06235 segundos
+Tamanho original do arquivo: 2553903 bytes
+Total de bytes recebidos:    2342959 bytes
+Pacotes necessários:         2495
+Total de pacotes recebidos:  2289
+---------------------------------------------------
+
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_UDP/prog2.pdf recebido com sucesso.
+
+---------------------------------------------------
+Diferença detectada entre os arquivos de origem e destino.
+Tempo da transferência:      0.06525 segundos
+Tamanho original do arquivo: 2553903 bytes
+Total de bytes recebidos:    2328623 bytes
+Pacotes necessários:         2495
+Total de pacotes recebidos:  2275
+---------------------------------------------------
+
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_UDP/prog2.pdf recebido com sucesso.
+
+---------------------------------------------------
+Diferença detectada entre os arquivos de origem e destino.
+Tempo da transferência:      0.06072 segundos
+Tamanho original do arquivo: 2553903 bytes
+Total de bytes recebidos:    2252847 bytes
+Pacotes necessários:         2495
+Total de pacotes recebidos:  2201
+---------------------------------------------------

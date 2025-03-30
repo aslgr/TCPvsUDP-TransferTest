@@ -1,0 +1,47 @@
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_TCP/socm-video-05.mkv recebido com sucesso.
+
+---------------------------------------------------
+Todos os pacotes enviados foram recebidos corretamente.
+Tempo da transferência:      4.38728 segundos
+Tamanho original do arquivo: 173036952 bytes
+Total de bytes recebidos:    173036952 bytes
+Pacotes necessários:         168982
+Total de pacotes recebidos:  170037
+---------------------------------------------------
+
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_TCP/socm-video-05.mkv recebido com sucesso.
+
+---------------------------------------------------
+Todos os pacotes enviados foram recebidos corretamente.
+Tempo da transferência:      3.73793 segundos
+Tamanho original do arquivo: 173036952 bytes
+Total de bytes recebidos:    173036952 bytes
+Pacotes necessários:         168982
+Total de pacotes recebidos:  170964
+---------------------------------------------------
+
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_TCP/socm-video-05.mkv recebido com sucesso.
+
+---------------------------------------------------
+Todos os pacotes enviados foram recebidos corretamente.
+Tempo da transferência:      3.83219 segundos
+Tamanho original do arquivo: 173036952 bytes
+Total de bytes recebidos:    173036952 bytes
+Pacotes necessários:         168982
+Total de pacotes recebidos:  171224
+---------------------------------------------------
+
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_TCP/socm-video-05.mkv recebido com sucesso.
+
+---------------------------------------------------
+Todos os pacotes enviados foram recebidos corretamente.
+Tempo da transferência:      3.62712 segundos
+Tamanho original do arquivo: 173036952 bytes
+Total de bytes recebidos:    173036952 bytes
+Pacotes necessários:         168982
+Total de pacotes recebidos:  171336
+---------------------------------------------------

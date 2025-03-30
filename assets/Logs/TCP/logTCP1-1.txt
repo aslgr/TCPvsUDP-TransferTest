@@ -1,0 +1,12 @@
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_TCP/FLS.rar recebido com sucesso.
+
+---------------------------------------------------
+Todos os pacotes enviados foram recebidos corretamente.
+Tempo da transferência:      3.53816 segundos
+Tamanho original do arquivo: 1051386760 bytes
+Total de bytes recebidos:    1051386760 bytes
+Pacotes necessários:         1026745
+Total de pacotes recebidos:  1026745
+---------------------------------------------------
+

@@ -1,0 +1,47 @@
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_UDP/socm-video-14.mkv recebido com sucesso.
+
+---------------------------------------------------
+Diferença detectada entre os arquivos de origem e destino.
+Tempo da transferência:      2.72377 segundos
+Tamanho original do arquivo: 158130862 bytes
+Total de bytes recebidos:    155831982 bytes
+Pacotes necessários:         154425
+Total de pacotes recebidos:  152180
+---------------------------------------------------
+
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_UDP/socm-video-14.mkv recebido com sucesso.
+
+---------------------------------------------------
+Diferença detectada entre os arquivos de origem e destino.
+Tempo da transferência:      2.21981 segundos
+Tamanho original do arquivo: 158130862 bytes
+Total de bytes recebidos:    154769070 bytes
+Pacotes necessários:         154425
+Total de pacotes recebidos:  151142
+---------------------------------------------------
+
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_UDP/socm-video-14.mkv recebido com sucesso.
+
+---------------------------------------------------
+Diferença detectada entre os arquivos de origem e destino.
+Tempo da transferência:      2.76297 segundos
+Tamanho original do arquivo: 158130862 bytes
+Total de bytes recebidos:    155568814 bytes
+Pacotes necessários:         154425
+Total de pacotes recebidos:  151923
+---------------------------------------------------
+
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_UDP/socm-video-14.mkv recebido com sucesso.
+
+---------------------------------------------------
+Diferença detectada entre os arquivos de origem e destino.
+Tempo da transferência:      2.73949 segundos
+Tamanho original do arquivo: 158130862 bytes
+Total de bytes recebidos:    155782830 bytes
+Pacotes necessários:         154425
+Total de pacotes recebidos:  152132
+---------------------------------------------------

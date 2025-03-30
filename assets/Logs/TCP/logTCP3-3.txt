@@ -1,0 +1,47 @@
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_TCP/prog2.pdf recebido com sucesso.
+
+---------------------------------------------------
+Todos os pacotes enviados foram recebidos corretamente.
+Tempo da transferência:      0.07212 segundos
+Tamanho original do arquivo: 2553903 bytes
+Total de bytes recebidos:    2553903 bytes
+Pacotes necessários:         2495
+Total de pacotes recebidos:  2540
+---------------------------------------------------
+
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_TCP/prog2.pdf recebido com sucesso.
+
+---------------------------------------------------
+Todos os pacotes enviados foram recebidos corretamente.
+Tempo da transferência:      0.06728 segundos
+Tamanho original do arquivo: 2553903 bytes
+Total de bytes recebidos:    2553903 bytes
+Pacotes necessários:         2495
+Total de pacotes recebidos:  2540
+---------------------------------------------------
+
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_TCP/prog2.pdf recebido com sucesso.
+
+---------------------------------------------------
+Todos os pacotes enviados foram recebidos corretamente.
+Tempo da transferência:      0.06945 segundos
+Tamanho original do arquivo: 2553903 bytes
+Total de bytes recebidos:    2553903 bytes
+Pacotes necessários:         2495
+Total de pacotes recebidos:  2535
+---------------------------------------------------
+
+Iniciando recebimento do arquivo...
+Arquivo ./Arquivos_client_TCP/prog2.pdf recebido com sucesso.
+
+---------------------------------------------------
+Todos os pacotes enviados foram recebidos corretamente.
+Tempo da transferência:      0.06731 segundos
+Tamanho original do arquivo: 2553903 bytes
+Total de bytes recebidos:    2553903 bytes
+Pacotes necessários:         2495
+Total de pacotes recebidos:  2658
+---------------------------------------------------

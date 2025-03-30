@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Relatório Trabalho Redes II</title>
+
+    </head>
+
+    <header class="header">
+        <h1>Relatório da comparação entre procotolos TCP e UDP</h1>
+        <h2>Pedro Chapelin e Arthur Gropp</h2>
+    </header>
+
+    <body class="body">
+
+        <section class="introduction">
+            Para testar os protocolos da camada de transporte do modelo OSI e observar as diferenças entre eles,
+            optamos por utilizar a linguagem de programação Python para implementar um sistema cliente-servidor
+            para ambos, com as funções de API socket. Por meio das funções disponibilizadas, focamos em realizar
+            uma transferência de arquivos do servidor para o cliente, com o objetivo de observar o tempo total
+            da transferência e se todos os pacotes (<i>Chunks de 1024 bytes, ou 1KB</i>) foram efetivamente entregues. <br> <br>
+            Sabemos que o <b>UDP</b> não realiza os mesmos tratamentos e cuidados que o <b>TCP</b>, relativos a 
+            verificações de pacotes, retransmissão de dados perdidos ou timeouts. Por conta disso ao montarmos
+            os códigos do cliente e servidor TCP e UDP, imaginamos que ao rodar com um arquivo de teste<i>(1GB
+            de tamanho)</i> o UDP seria muito mais rápido que o TCP. <br><br>
+            Eis aqui os códigos: <br><br>
+        </section>
+
+        <section class="codes">
+            <a href="assets/Códigos/UDP/server_UDP.py.txt">Server UDP</a> | 
+            <a href="assets/Códigos/UDP/client_UDP.py.txt">Client UDP</a> <br>
+            <a href="assets/Códigos/TCP/server_TCP.py.txt">Server TCP</a> |
+            <a href="assets/Códigos/TCP/client_TCP.py.txt">Client TCP</a> <br>
+        </section>
+
+        <section class="tests">
+
+            <div class="test">
+                <h2>1º Teste</h2>
+                Para o primeiro teste realizamos a transferência com um arquivo de 1GB e também de outro arquivo menor: <br> <br>
+
+                <a href="assets/Logs/UDP/logUDP1-1.txt">logUDP1-1.txt</a> |
+                <a href="assets/Logs/TCP/logTCP1-1.txt">logTCP1-1.txt</a> <br> <br>
+
+                Ao observar os logs de execução, conseguimos reparar que tanto o UDP quanto o TCP levaram praticamente
+                o mesmo tempo para executar a transferência, entretanto com o UDP não foi possível entregar todos os 
+                pacotes necessários. Mas como é possível levarem o mesmo tempo? Não era pro UDP ser mais rápido? <br> <br>
+                Isso acontece porque estamos testando na <b>loopback</b>, que é um endereço que aponta pra própria
+                máquina, simulando uma rede. Nessa simulação, podemos perceber que a rede é perfeita (e irreal), ou
+                seja, não apresenta congestionamento, perda de pacotes, latência e outros aspectos que podem interferir
+                em transferências de dados.
+            </div>
+
+            <div class="test">
+                <h2>2º Teste</h2>
+                Para o segundo teste, buscamos como simular fatores que estimulasse as transferências a sofrerem
+                atrasos ou perdas no meio do caminho, para isso usamos o comando <b>iptables</b> no terminal 
+                antes de executarmos os programas. <br> <br>
+
+                <i>sudo iptables -A INPUT -m statistic --mode random --probability 0.1 -j DROP</i> <br> <br>
+
+                A junção dos parâmetros acima indica que foi configurado uma perda aleatória de 10% dos pacotes de entrada. <br> <br>
+
+                <a href="assets/Logs/UDP/logUDP2-1.txt">logUDP2-1.txt</a> |
+                <a href="assets/Logs/TCP/logTCP2-1.txt">logTCP2-1.txt</a> <br> <br>
+
+                Ao enviar o mesmo pacote de 1GB do primeiro teste, podemos observar uma diferença gritante entre o UDP e TCP 
+                descrita nos logs acima. Agora por conta da perda de pacotes, conseguimos observar que o TCP demorou 
+                absurdamente mais, isso se deve ao fato dele sempre garantir a entrega confiável e na mesma ordem da origem.
+                Para que isso seja possível o TCP precisou fazer retransmissões e verificações, o que com certeza impactaram
+                no tempo final da transmissão. Quanto ao UDP, percebemos que não mudou quase nada, pois como não garante nenhuma
+                das propriedades descritas acima, não faz nenhuma verificação.
+            </div>
+
+            <div class="test">
+                <h2>3º Teste</h2>
+                Para o terceiro teste, efetivamente fomos aos laboratórios do DInf testarmos a transferência de arquivos entre dois computadores distintos. Foi necessário, portanto, mudarmos as constantes host e port em todos os códigos. Por meio desse teste, obtivemos os seguintes resultados: <br>
+
+                <h3>3.1: Transmissão de um arquivo de vídeo de 158MB.</h3>
+
+                <a href="assets/Logs/UDP/logUDP3-1.txt">logUDP3-1.txt</a> |
+                <a href="assets/Logs/TCP/logTCP3-1.txt">logTCP3-1.txt</a> <br> <br>
+
+                Em média, o UDP apresentou um tempo de transferência de <b>2,61151</b> segundos, enquanto o TCP apresentou um tempo de transferência de <b>2,80171</b> segundos. Ou seja, nesse caso o UDP performou aproximadamente <b>6,79%</b> mais rápido do que o TCP. <br> <br>
+
+                Em contrapartida, percebemos também que o UDP recebeu, em média, apenas <b>151.844</b> pacotes dos <b>154.425</b> necessários para montar o arquivo. Isto é, <b>155.488.174</b> de bytes, dos <b>158.130.862</b> de bytes do arquivo original. Uma perda significativa, mas não tanto quanto esperávamos, de <b>1,67%</b> do arquivo original, enquanto no TCP todos os bytes do arquivo original foram devidamente recebidos. <br> <br>
+
+                Ademais, é interessante notarmos que o TCP, em todos os casos de teste, recebeu mais pacotes do que o que havia sido calculado como necessário para transferir o arquivo. Isso acontece devido à natureza de seu protocolo de transmissão confiável, onde são realizadas retransmissões de pacotes perdidos ou corrompidos. <br>
+
+                <h3>3.2: Transmissão de um arquivo de vídeo de 173MB.</h3>
+
+                <a href="assets/Logs/UDP/logUDP3-2.txt">logUDP3-2.txt</a> |
+                <a href="assets/Logs/TCP/logTCP3-2.txt">logTCP3-2.txt</a> <br> <br>
+
+                O tempo de transferência do UDP apresentou uma média de <b>3,10010</b> segundos, enquanto o TCP obteve uma média igual à <b>3,89613</b> segundos. Ou seja, nesses testes o UDP se mostrou <b>20,43%</b> mais rápido do que o TCP. <br> <br>
+
+                Por outro lado, novamente percebemos que o UDP não recebeu todos os pacotes necessários, tendo recebido em média <b>166.241</b> pacotes dos <b>168.982</b> do arquivo original. Isto equivale à <b>170.230.680</b> de bytes, sendo que o arquivo original possui <b>173.036.952</b> bytes. Em outras palavras, aproximadamente <b>3 milhões</b> de bytes não foram corretamente entregues. <br> <br>
+
+                Além disso, mais uma vez o TCP recebeu mais pacotes do que o previsto inicialmente, indicando o acontecimento de retransmissões. <br>
+
+                <h3>3.3: Transmissão de um arquivo de vídeo de 2,5MB.</h3>
+
+                <a href="assets/Logs/UDP/logUDP3-3.txt">logUDP3-3.txt</a> |
+                <a href="assets/Logs/TCP/logTCP3-3.txt">logTCP3-3.txt</a> <br> <br>
+
+                Neste caso, a média do tempo da transferência do UDP foi de <b>0.06397</b> segundos, enquanto o TCP obteve uma média de <b>0.06904</b> segundos. Ou seja, o UDP foi <b>8,5%</b> mais veloz. <br> <br>
+
+                A média de pacotes recebidos, por sua vez, foi igual à <b>2.293</b> para o UDP, sendo necessários <b>2.495</b> pacotes para montar o arquivo original. Portanto, a média de bytes recebidos foi de <b>2.347.567</b>, sendo que o tamanho original do arquivo era igual à <b>2.553.903</b> bytes. Nesse sentido, cerca de <b>8%</b> do conteúdo do arquivo original foi perdido. <br> <br>
+
+                O TCP, como sempre, realizou retransmissões de pacotes perdidos ou corrompidos.
+            </div>
+
+            <div>
+                <h2>Conclusão</h2>
+                Os testes realizados evidenciam as principais diferenças entre os protocolos TCP e UDP. O UDP se mostrou consistentemente mais rápido que o TCP, principalmente em ambientes simulados ou redes locais sem perdas significativas. No entanto, o UDP não garante a entrega confiável dos dados, resultando em perdas de pacotes que podem comprometer a integridade dos arquivos transferidos. <br> <br>
+
+                Por outro lado, o TCP, embora mais lento devido às retransmissões e verificações para garantir a confiabilidade, entregou todos os arquivos sem perdas de dados. Isso o torna mais adequado para aplicações onde a integridade é essencial, enquanto o UDP é mais eficiente em cenários onde velocidade é prioritária e a perda de dados é tolerável. <br> <br>
+            </div>
+            
+        </section>
+    </body>
+</html>
